@@ -35,7 +35,7 @@ pipeline{
 				sh 'docker push  $DOCKERUSER/petclinic:${BUILD_NUMBER}-dev'
 			}
 		}
-		// stage('cloudformation') {
+		/// stage('cloudformation') {
 			// steps{
 				// sh"aws cloudformation create-stack --stack-name spring-petclinic-${BUILD_NUMBER} --template-body file://infrastructure.yaml --region 'us-east-1' --parameters ParameterKey=KeyName,ParameterValue=cloudformation ParameterKey=ServerName,ParameterValue=spring-petclinic-${BUILD_NUMBER}"
 			// }
