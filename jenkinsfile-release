@@ -1,5 +1,4 @@
 
-node {
 pipeline{
     agent any
 	tools {
@@ -67,5 +66,4 @@ pipeline{
 			cleanWs()
 		}
 	}	
-}
 }
