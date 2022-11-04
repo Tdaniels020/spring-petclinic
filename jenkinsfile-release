@@ -61,9 +61,11 @@ pipeline{
 	post {
 		always {
 			script{
-			  sh 'docker logout'
-			  sh 'docker rmi $DOCKERUSER/petclinic:${RELEASE_VERSION_NO}'
-			  cleanWs()
+				if (getContext(hudson.FilePath)) {
+			       sh 'docker logout'
+			       sh 'docker rmi $DOCKERUSER/petclinic:${RELEASE_VERSION_NO}'
+			       cleanWs()
+				}
 			}
 		}
 	}	
