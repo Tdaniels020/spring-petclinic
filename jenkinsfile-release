@@ -60,9 +60,11 @@ pipeline{
 	}	 
 	post {
 		always {
-			sh 'docker logout'
-			sh 'docker rmi $DOCKERUSER/petclinic:${RELEASE_VERSION_NO}'
-			cleanWs()
+			script{
+			  sh 'docker logout'
+			  sh 'docker rmi $DOCKERUSER/petclinic:${RELEASE_VERSION_NO}'
+			  cleanWs()
+			}
 		}
 	}	
 }
